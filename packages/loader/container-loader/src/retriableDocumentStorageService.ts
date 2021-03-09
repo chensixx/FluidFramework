@@ -53,7 +53,7 @@ export class RetriableDocumentStorageService implements IDocumentStorageService 
 
     public async read(blobId: string): Promise<string> {
         return this.readWithRetry(async () =>
-        bufferToString(await this.internalStorageService.readBlob(blobId),"base64"), "read");
+        bufferToString(await this.internalStorageService.readBlob(blobId),"base64"), "readBlob");
     }
 
     public async readBlob(id: string): Promise<ArrayBufferLike> {
